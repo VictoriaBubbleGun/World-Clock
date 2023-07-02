@@ -5,47 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>World Clock ⏰</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data-1970-2030.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data-1970-2030.min.js"></script>
   </head>
   <body>
     <div class="container">
       <header>World Clock</header>
-      <select name="country" id="country" class="selectCountry">
+      <select name="city" id="citySelector" class="selectCity">
         <option value="">Select a City</option>
         <option value="berlin">Berlin</option>
         <option value="paris">Paris</option>
         <option value="jamaica">Hong Kong</option>
         <option value="hawaii">Hawaii</option>
       </select>
-      <div class="city">
+      <div class="city" id="berlin" value="Europe/Berlin">
         <div>
           <h2>Berlin</h2>
           <div class="date">Saturday 20.11.23</div>
         </div>
         <div class="time">18:48<small>pm</small></div>
       </div>
-      <div class="city">
+      <div class="city" id="paris" value="Europe/Paris">
         <div>
           <h2>Paris</h2>
           <div class="date">Saturday 20.11.23</div>
         </div>
         <div class="time">18:48<small>pm</small></div>
       </div>
-      <div class="city">
+      <div class="city" id="hong-kong" value="Asia/Hong_Kong">
         <div>
           <h2>Hong Kong</h2>
           <div class="date">Saturday 20.11.23</div>
         </div>
         <div class="time">18:48<small>pm</small></div>
       </div>
-      <div class="city">
+      <div class="city" id="hawaii" value="US/Hawaii">
         <div>
           <h2>Hawaii</h2>
           <div class="date">Saturday 20.11.23</div>
