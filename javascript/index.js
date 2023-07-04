@@ -60,7 +60,8 @@ function changeWorldClock(event) {
         <div class="time">${cityTime.format(
           "hh:mm:ss[<small>]a[</small>]"
         )}</div>
-      </div>`;
+      </div>
+      <a class="allcities" href="/">All Cities</a>`;
 }
 
 clock();
