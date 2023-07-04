@@ -1,6 +1,6 @@
-//berlin
-
 function clock() {
+  //berlin
+
   let berlin = document.querySelector("#berlin");
   let berlinDate = berlin.querySelector(".date");
   berlinDate.innerHTML = moment
@@ -10,11 +10,9 @@ function clock() {
   berlinTime.innerHTML = moment
     .tz("Europe/Berlin")
     .format("hh:mm:ss[<small>]a[</small>]");
-}
-berlinTime = setInterval(clock, 1000);
 
-//paris
-function clock1() {
+  //paris
+
   let paris = document.querySelector("#paris");
   let parisDate = paris.querySelector(".date");
   parisDate.innerHTML = moment.tz("Europe/Paris").format("dddd, MMMM Do YYYY");
@@ -22,11 +20,9 @@ function clock1() {
   parisTime.innerHTML = moment
     .tz("Europe/Paris")
     .format("hh:mm:ss[<small>]a[</small>]");
-}
-parisTime = setInterval(clock1, 1000);
 
-//hong-kong
-function clock2() {
+  //hong-kong
+
   let hongKong = document.querySelector("#hong-kong");
   let hongKongDate = hongKong.querySelector(".date");
   hongKongDate.innerHTML = moment
@@ -36,11 +32,9 @@ function clock2() {
   hongKongTime.innerHTML = moment
     .tz("Asia/Hong_Kong")
     .format("hh:mm:ss[<small>]a[</small>]");
-}
-hongKongTime = setInterval(clock2, 1000);
 
-//hawaii
-function clock3() {
+  //hawaii
+
   let hawaii = document.querySelector("#hawaii");
   let hawaiiDate = hawaii.querySelector(".date");
   hawaiiDate.innerHTML = moment.tz("Us/Hawaii").format("dddd, MMMM Do YYYY");
@@ -49,4 +43,25 @@ function clock3() {
     .tz("US/Hawaii")
     .format("hh:mm:ss[<small>]a[</small>]");
 }
-hawaiiTime = setInterval(clock3, 1000);
+
+function changeWorldClock(event) {
+  let timeZone = event.target.value;
+  let cityTime = moment().tz(timeZone);
+  let cityName = timeZone.replace("_", " ").split("/")[1];
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = ` <div class="city" >
+        <div>
+          <h2>${cityName}</h2>
+          <div class="date">${cityTime.format("dddd, MMMM Do YYYY")}</div>
+        </div>
+        <div class="time">${cityTime.format(
+          "hh:mm:ss[<small>]a[</small>]"
+        )}</div>
+      </div>`;
+}
+
+clock();
+setInterval(clock, 1000);
+
+let citiesSelectElement = document.querySelector("#citySelector");
+citiesSelectElement.addEventListener("change", changeWorldClock);
